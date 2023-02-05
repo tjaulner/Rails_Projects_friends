@@ -1,0 +1,24 @@
+
+
+<div class="card text-bg-light" style="width: 28rem;">
+  <div class="card-body">
+    <h5 class="card-title fw-bold">Friend Details:</h5>
+    <hr>
+    <p class="card-text"> <%= render @friend %> </p>
+    <hr>
+      <div class="btn-group">
+        <a class="card-link"><%= link_to "Edit", edit_friend_path(@friend), class:"btn btn-secondary btn-sm m-2 " %>  </a> 
+        <a class="card-link"><%= link_to 'Destroy', @friend, method: :delete, class:"btn btn-danger btn-sm m-2" %></a>
+        <a class="card-link"><%= link_to "Back", friends_path, class:"btn btn-dark btn-sm m-2" %></a>
+      </div>
+    
+    
+    
+  </div>
+</div>
+
+
+
+
+
+

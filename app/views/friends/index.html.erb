@@ -1,0 +1,48 @@
+
+
+<table class="table table-hover">
+  <thead class="table-secondary">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @friends.each do |friend| %>
+    <% if friend.user == current_user %>
+    <p>
+    <tr>
+      <td><%= link_to friend.first_name + ' ' + friend.last_name, friend, class:"w-100 text-start btn btn-outline-success btn-sm" %></td>
+      <td><%= friend.email%></td>
+      <td><%= friend.phone%></td>
+      <td><%= friend.twitter%></td>
+
+      <td><%= button_to 'Destroy', 
+        friend_path(friend), 
+        method: :delete, 
+        class:"btn btn-outline-danger btn-sm" %></td>
+      
+    </tr>
+    <% end %>
+    </p>
+  <% end %>
+  </tbody>
+
+</table>
+
+<%= link_to "New Friend", new_friend_path, class:"btn btn-secondary"%>
+
+
+
+
+
+
+
+
+
+          
+     
